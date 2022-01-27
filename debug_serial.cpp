@@ -31,6 +31,13 @@ void CDebugSerial::analyze(char c)
       Serial.printf("%c\r\n", c);
       application.m_moteurs.CdeMoteurDroit(10);
       break;
+
+    case 's' : 
+      Serial.printf("%c\r\n", c);
+      application.m_strategie.m_StateMachineMain.start();
+      //application.m_StateMachineExemple1.start();
+      //application.m_StateMachineExemple2.start();
+      break;
       
     default : 
       Serial.printf("%c ??\r\n", c);
@@ -54,6 +61,7 @@ void CDebugSerial::affiche_menu()
   Serial.printf("a........ Pilotage moteur G 10%\r\n");
   Serial.printf("z........ Pilotage moteur D 10%\r\n");
   Serial.printf("w........ Etat des capteurs\r\n");
+  Serial.printf("s........ Start State Machine\r\n");
   Serial.printf("Choix: ");
 }
 

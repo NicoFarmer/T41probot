@@ -35,6 +35,7 @@ public:
     CMoteurs            m_moteurs;
     CCodeurs            m_codeurs;
     CAsservissement     m_asservissement;
+    CStrategie          m_strategie;
     CDebugSerial        m_debug_serial;
 };
 

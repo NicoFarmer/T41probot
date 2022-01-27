@@ -21,6 +21,8 @@ void CApplication::init(void)
   FlexiTimer2::start();
 
   m_debug_serial.affiche_menu();
+  m_strategie.init();
+
 }
 
 
@@ -74,6 +76,9 @@ void CApplication::Sequenceur(void)
   cpt20msec++;
   if (cpt20msec >= TEMPO_20msec) {
     cpt20msec = 0;
+
+    m_strategie.run();
+ 
  }
 
 
